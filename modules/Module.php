@@ -38,33 +38,33 @@ class Module extends \yii\base\Module
         }
 
         parent::init();
-//         $url = "https://developers.zomato.com/api/v2.1/search?entity_id=259&entity_type=city&q=Melbourne&count=20";
-// // user-key is based on the key registered in zomato API page ...
-// $ch = curl_init();
-// curl_setopt($ch, CURLOPT_URL, $url);
-// curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-//     'Accept: application/json',
-//     'user-key: 419a4c531b337d0e0d082a84065726e2'
-//   ));
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-// $output = curl_exec($ch);
-// $curl_error = curl_error($ch);
-// curl_close($ch);
+        $url = "https://developers.zomato.com/api/v2.1/search?entity_id=259&entity_type=city&q=Melbourne&count=20";
+// user-key is based on the key registered in zomato API page ...
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Accept: application/json',
+    'user-key: 419a4c531b337d0e0d082a84065726e2'
+  ));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$output = curl_exec($ch);
+$curl_error = curl_error($ch);
+curl_close($ch);
 
-// //
-// $array = json_decode($output, true);
-//     $restaurantName = "<ul class='list-group' style='float:left;margin:40px;'>";
-// for ($i=0 ; $i<count($array['restaurants']) ; $i++){
-//   $restaurantName .= "<li class='list-group-item list-group-item-action'>";
-//   $restaurantName .= ($array['restaurants'][$i]['restaurant']['name']."<br>");
-// $restaurantName .= "</li>";
-// }
-//   $restaurantName .= "</ul>";
-//   echo $restaurantName;
-//   // in the case of error related to returned value...
-// print_r($curl_error);
+//
+$array = json_decode($output, true);
+    $restaurantName = "<ul class='list-group' style='float:left;margin:40px;'>";
+for ($i=0 ; $i<count($array['restaurants']) ; $i++){
+  $restaurantName .= "<li class='list-group-item list-group-item-action'>";
+  $restaurantName .= ($array['restaurants'][$i]['restaurant']['name']."<br>");
+$restaurantName .= "</li>";
+}
+  $restaurantName .= "</ul>";
+  echo $restaurantName;
+  // in the case of error related to returned value...
+print_r($curl_error);
         // Custom initialization code goes here...
     }
 }
