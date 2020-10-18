@@ -1,9 +1,9 @@
-
 $(document).ready(function(){
+    
     $("#searchZomato").keyup(function(){
             var searchText = $(this).val();
-        $.ajax({
-        url:"search.php?searchText="+ searchText,
+    $.ajax({
+        url:"search.php?searchtext="+searchText,
         type: "GET",
         data: "hasan",
         dataType: "text",
@@ -15,7 +15,9 @@ $(document).ready(function(){
         });
     });
             function successFn(result){
-            console.log("successfully request sent");
+            console.log("successfully request sent ...");
+            console.log(result);
+            
             $("#suggestions").html(result);
         }
         function errorFn(xhr,status,result){
