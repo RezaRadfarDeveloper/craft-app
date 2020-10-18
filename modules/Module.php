@@ -56,7 +56,7 @@ curl_close($ch);
 //
 $array = json_decode($output, true);
     $restaurantName = "<ul class='list-group' style='float:left;margin:40px;'>";
-for ($i=0 ; $i<count($array['restaurants']) ; $i++){
+for ($i=0 ; $i<count($array['restaurants']) ; $i++) {
   $restaurantName .= "<li class='list-group-item list-group-item-action'>";
   $restaurantName .= ($array['restaurants'][$i]['restaurant']['name']."<br>");
 $restaurantName .= "</li>";

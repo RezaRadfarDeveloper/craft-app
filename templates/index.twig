@@ -31,7 +31,7 @@
     </li>
     {% endfor %}
     <li class="nav-item"><a class="nav-link disabled">Date: {{ now|date('Y-m-d')}}</a></li>
-    <li class="nav-item"><a class="nav-link disabled">Current User: {{ currentUser.username }}</a></li>
+    {# <li class="nav-item"><a class="nav-link disabled">Current User: {{ currentUser.username }}</a></li> #}
        
      
  
@@ -49,6 +49,7 @@
 {%  endblock  %}
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
  <script src="{{ siteUrl }}assets/js/script.js"></script>
 </body>
 </html>
